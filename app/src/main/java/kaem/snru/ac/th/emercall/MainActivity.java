@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import kaem.snru.ac.th.emercall.fragment.MainFragment;
 
@@ -22,6 +24,48 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        Police Controller
+        TextView PoliceTextView = findViewById(R.id.txtPolice);
+        PoliceTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contentMainFragment, new MainFragment()).commit();
+                drawerLayout.closeDrawers();
+            }
+        });
+
+
+
+//        Hospital Controller
+        TextView HospitalTextView = findViewById(R.id.txtHospital);
+        HospitalTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contentMainFragment, new MainFragment()).commit();
+                drawerLayout.closeDrawers();
+            }
+        });
+
+//        Insurance Controller
+        TextView InsuranceTextView = findViewById(R.id.txtInsurance);
+        InsuranceTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             drawerLayout.closeDrawers();
+            }
+        });
+
+//        Exit Controller
+        TextView ExitTextView = findViewById(R.id.txtExit);
+        ExitTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.closeDrawers();
+            }
+        });
 
 
 //        create Toolbar
