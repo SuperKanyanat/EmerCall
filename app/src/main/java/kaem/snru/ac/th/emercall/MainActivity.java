@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import kaem.snru.ac.th.emercall.fragment.HospitalFragment;
 import kaem.snru.ac.th.emercall.fragment.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.contentMainFragment, new MainFragment()).commit();
+                        .replace(R.id.contentMainFragment, new HospitalFragment()).commit();
                 drawerLayout.closeDrawers();
             }
         });
